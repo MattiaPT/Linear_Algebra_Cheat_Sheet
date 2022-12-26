@@ -1,0 +1,146 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{enumitem}
+\usepackage[ngerman]{babel}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{textcomp}
+\usepackage{multirow}
+
+
+%opening
+\title{
+    Linear Algebra - Cheat Sheet (HS22)
+}
+\author{Mattia Taiana}
+\date{26. December 2022}
+
+% 3 column landscape layout with fewer margins
+\usepackage[landscape, left=0.75cm, top=1cm, right=0.75cm, bottom=1cm, footskip=10pt]{geometry}
+\usepackage{flowfram}
+\ffvadjustfalse
+\setlength{\columnsep}{0.75cm}
+\Ncolumn{3}
+\linespread{0.9}
+
+% Turn off header and footer
+\pagestyle{plain}
+
+\graphicspath{ {./assets/} }
+
+% Reduce title spacings
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{8pt}{2pt}
+\titlespacing*{\subsection}{0pt}{4pt}{2pt}
+\titlespacing*{\subsubsection}{0pt}{3pt}{1pt}
+
+% No auto paragraph indent
+\setlength{\parindent}{0pt}
+
+% Color boxes
+\usepackage[many]{tcolorbox}
+\tcbset {
+  base/.style={
+    bottom=0mm,
+    top=0mm,
+    boxrule=0mm,
+    leftrule=0.5mm,
+    left=1mm,
+    arc=0mm, 
+    fonttitle=\bfseries, 
+    colbacktitle=black!5!white, 
+    colback=black!2!white,
+    coltitle=black,
+    toptitle=0.25mm,
+    bottomtitle=0mm,
+    title={#1}
+  }
+}
+
+\definecolor{blue}{rgb}{0.34, 0.7, 1}
+\definecolor{green}{rgb}{0.2, 1, 0.4}
+\definecolor{purple}{rgb}{1, 0.3, 1}
+
+\newtcolorbox{mainbox}[2][]{
+  colframe=blue,
+  base={#2},
+  #1
+}
+
+\newtcolorbox{howtobox}[1]{
+  colframe=green, 
+  base={#1}
+}
+
+\newtcolorbox{bspbox}[1]{
+  colframe=purple, 
+  base={#1}
+}
+
+\newtcolorbox{exbox}[1]{
+  colframe=pink,
+  base={#1},
+  colbacktitle=black!1!white,
+  colback=black!0!white,
+  breakable,
+}
+
+\newtcolorbox{subbox}[2][]{
+  colframe=black!20!white,
+  base={#2},
+  #1
+}
+
+
+% Mathematical typesetting & symbols
+\usepackage{amsthm, mathtools, amssymb, xfrac} 
+\usepackage{bm}
+\usepackage{marvosym, wasysym}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\eqdef}{=\vcentcolon}
+
+\DeclareMathOperator\arccot{arccot}
+\DeclareMathOperator\arctanh{arctanh}
+\DeclareMathOperator\arcsinh{arcsinh}
+\DeclareMathOperator\arccosh{arccosh}
+
+\newenvironment{mcenv}{\setlist[itemize]{noitemsep,leftmargin=*}}{}
+
+\newcommand{\axioms}[2][]{#2}
+\newcommand{\definition}[2][]{#2}
+\newcommand{\lemma}[2][]{#2}
+\newcommand{\theorem}[2][]{#2}
+\newcommand{\corollary}[2][]{#2}
+\newcommand{\howto}[2][]{#2}
+\newcommand{\example}[2][]{#2}
+\newcommand{\mcquestion}[2]{
+ \begin{exbox}{#1}
+  #2
+ \end{exbox}
+}
+\newcommand{\exercise}[2]{
+ \begin{exbox}{#1}
+  #2
+ \end{exbox}
+}
+\newcommand{\smallpara}{
+  \vspace{-10pt}
+  \paragraph{}
+}
+
+
+\begin{document}
+ \maketitle
+ \input{chapters/complex_numbers}
+ \input{chapters/linear_systems_of_equations}
+\end{document}

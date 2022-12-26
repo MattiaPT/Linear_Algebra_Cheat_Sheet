@@ -1,0 +1,29 @@
+\section{LSE}
+\begin{mainbox}{Gauss-Algorithm}
+	runtime: $O(n^3)$\\
+	valid Ops: switch, multiply and add/subtract rows\\
+	goal: row echelon form\\
+    \begin{tabular}{ c c c c | c l}
+        $x_1$ & $x_2$ & ... & $x_n$ & & \\
+        \cline{1-5}
+        \circled{$a_{11}$} & $a_{12}$ & ... & $a_{1n}$ & $b_1$ & \multirow{5}{*}{\hspace{-1em}$\left.\begin{array}{l}
+                \\
+                \\
+                \\
+                \\
+                \\
+                \end{array}\right\rbrace \text{rank r}$} \\
+        0 & \circled{$a_{22}$} & ... & $a_{2n}$ & $b_2$ & \\
+        ... & ... & ... & ... & ... & \\
+        0 & 0 & 0 & \circled{$a_{rn}$} & $b_r$ & \\
+        ... & ... & ... & ... & ... & \multirow{2}{*}{\hspace{-1em}$\left.\begin{array}{l}
+                \\
+                \\
+                \end{array}\right\rbrace $\ontoptext[-4pt]{consistency}{conditions}} \\
+        0 & 0 & ... & 0 & $b_m$ & \\
+        \multicolumn{4}{c}{\upbracefill} & \multicolumn{1}{c}{\upbracefill}\\
+        \multicolumn{4}{c}{LHS}& \multicolumn{1}{c}{RHS}\\
+    \end{tabular}\\
+    if RHS always 0: homogeneous LSE\\
+	consistency conditions: $b_{r+1} = ... = b_m = 0$
+\end{mainbox}

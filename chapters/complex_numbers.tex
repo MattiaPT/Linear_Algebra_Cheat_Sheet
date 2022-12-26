@@ -1,0 +1,53 @@
+\newcommand{\compconj}[1]{%
+  \overline{#1}%
+}
+\newcommand{\RN}[1]{%
+  \textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};}}
+\newcommand{\ontoptext}[3][0pt]{%
+	\begin{tabular}[b]{@{}c@{}}
+	#2\\[#1]
+	#3
+	\end{tabular}}
+
+\section{Complex Numbers}
+
+\begin{mainbox}{General}
+
+    $z = \underbrace{x}_\text{\textcolor{red}{Re}} +\:i\underbrace{y}_\text{\textcolor{red}{Im}} = \underbrace{r \cdot (\cos(\varphi) + i \cdot \sin(\varphi)) = r \cdot e^{i\varphi}}_\text{\textcolor{red}{Polarform}}\\
+    \compconj{z} = x - iy = r \cdot e^{i(2\pi - \varphi)}\\
+    |z| = r = \sqrt{x^{2} + y^{2}} = \sqrt{z \cdot \compconj{z}}\\
+    \varphi = \begin{cases}
+        arc tan(\frac{y}{x}), &\RN{1}\:Q.\\
+        arc tan(\frac{y}{x}) + \pi, &\RN{2}/\RN{3}\:Q.\\
+        arc tan(\frac{y}{x}) + 2\pi, &\RN{4}\:Q.\\
+    \end{cases}$
+
+\end{mainbox}
+\begin{mainbox}{Operations}
+    \begin{tabular}{rl}
+        $+/-:$ & $(x_{1} + x_{2}) + (y_{1} + y_{2})i$ \\
+        $z_1\cdot z_2:$ & $(x_{1} + y_{1}i)(x_{2} + y_{2}i) = r_{1}\cdot r_{2}\cdot e^{i(\varphi_{1} + \varphi_{2})}$ \\
+        $\frac{z_{1}}{z_{2}}:$ & $\frac{z_1\cdot\compconj{z}_2}{|z_2|^2} = \frac{r_{1}}{r_{2}}\cdot e^{i(\varphi_{1} - \varphi_{2})}$ \\
+        $z^n:$ & $r^n\cdot e^{i\varphi n}$ \\
+        $\sqrt{a}:$ & $a = z^n  \Leftrightarrow |a|\cdot e^{i\alpha} = r^n\cdot e^{i\varphi n} \underset{k = 0,...,n-1}{\begin{cases}
+            r = \sqrt[n]{|a|} \\
+            \varphi = \frac{\alpha + 2k\pi}{n}
+        \end{cases}}$
+    \end{tabular}
+\end{mainbox}
+\begin{mainbox}{Polynomials}
+    \begin{tabular}{rl}
+        Grad 2: & $z = \frac{b\pm \sqrt{b^2 - 4ac}}{2a}$\\
+        Sonderfall: & $az^n + c = 0 \Leftrightarrow z = \sqrt[n]{-\frac{c}{a}}$
+    \end{tabular}    
+\end{mainbox}
+\begin{mainbox}
+    \text{With polynomials with complex roots, the roots occur as a complex-conjugate pair.}\\
+    \text{Polynomials over} $\mathbb{C}$ \text{with an odd degree}\\
+    \text{have at least one root in} $\mathbb{R}$.
+\end{mainbox}
+\input{chapters/unit_circle.tex}
+
