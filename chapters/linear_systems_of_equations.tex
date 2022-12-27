@@ -1,7 +1,7 @@
 \section{LSE}
 \begin{mainbox}{Gauss-Algorithm}
 	runtime: $O(n^3)$\\
-	valid Ops: switch, multiply and add/subtract rows\\
+	elementary row operations:\\switch, multiply and add/subtract rows\\
 	goal: row echelon form\\
     \begin{tabular}{ c c c c | c l}
         $x_1$ & $x_2$ & ... & $x_n$ & & \\
@@ -12,7 +12,7 @@
                 \\
                 \\
                 \\
-                \end{array}\right\rbrace \text{rank r}$} \\
+                \end{array}\right\rbrace \text{rank}$} \\
         0 & \circled{$a_{22}$} & ... & $a_{2n}$ & $b_2$ & \\
         ... & ... & ... & ... & ... & \\
         0 & 0 & 0 & \circled{$a_{rn}$} & $b_r$ & \\
@@ -25,5 +25,29 @@
         \multicolumn{4}{c}{LHS}& \multicolumn{1}{c}{RHS}\\
     \end{tabular}\\
     if RHS always 0: homogeneous LSE\\
-	consistency conditions: $b_{r+1} = ... = b_m = 0$
+	consistency conditions (VB): $b_{r+1} = ... = b_m = 0$
+\end{mainbox}
+\begin{mainbox}{Number of solutions}
+	\textcolor{blue}{S 1.1}\\
+	$Ax = b$ min. 1 solution $\Leftrightarrow (r = m)$ or $(r < m + VB)$\\
+	if this is the case:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item $r = n$: only 1 solution
+		\item $r < n$: $\infty$ many solutions
+	\end{itemize}
+	$\Rightarrow r = m$:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item $r = n = m$: only 1 solution, \textcolor{red}{non-singular} LSE
+		\item $r < n$: $\infty$ many solutions, $(n-r)$ free parameters
+	\end{itemize}
+	$\Rightarrow r < m$:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item $r = n$: only 1 solution
+		\item $r < n$: $\infty$ many solutions, $(n-r)$ free parameters
+	\end{itemize}
+	K 1.5 In a homogeneous LSE non-trivial solutions exist only if $r < n$.\\
+	\begin{tabular}{ll}
+		\textcolor{blue}{S 2.5} & $Ax = b$ has a solution $\Leftrightarrow$\\
+		& b is a linear combination of columnvectors of A\\
+	\end{tabular}
 \end{mainbox}
