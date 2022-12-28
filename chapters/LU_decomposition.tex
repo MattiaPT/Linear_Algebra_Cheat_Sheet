@@ -1,0 +1,19 @@
+\section{LU-Decomposition}
+\begin{mainbox}{LU-Decomposition}
+The \textcolor{red}{LU-Decomposition} is a tool to\\
+solve SLE. It does this by factorizing a matrix, making\\
+it easy to solve the same matrix vor different RHS.\\
+\begin{tabular}{l|l}
+	1. Find $PA = LR$ & $\begin{bmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1 \\
+	\end{bmatrix} $\\
+	\makecell[l]{2. solve $Lc = Pb$\\\quad(forward substitution)} & \\
+	\makecell[l]{3. solve $Rx = c$\\\quad(backward substitution)} & \\
+	& \\
+	\makecell[l]{If rows are swapped\\ P gets permutated.} & \\
+	& \\
+	\makecell[l]{\textcolor{red}{partial pivoting} as a \textcolor{red}{pivot}\\\textcolor{red}{strategy} to minimize round-\\ing errors} & \\
+\end{tabular}
+\end{mainbox}

@@ -28,26 +28,24 @@
 	consistency conditions (VB): $b_{r+1} = ... = b_m = 0$
 \end{mainbox}
 \begin{mainbox}{Number of solutions}
-	\textcolor{blue}{S 1.1}\\
+	\textcolor{blue}{T 1.1}\\
+	\begin{tabular}{l}
 	$Ax = b$ min. 1 solution $\Leftrightarrow (r = m)$ or $(r < m + VB)$\\
-	if this is the case:
-	\begin{itemize}[noitemsep, topsep=0pt]
-		\item $r = n$: only 1 solution
-		\item $r < n$: $\infty$ many solutions
-	\end{itemize}
-	$\Rightarrow r = m$:
-	\begin{itemize}[noitemsep, topsep=0pt]
-		\item $r = n = m$: only 1 solution, \textcolor{red}{non-singular} LSE
-		\item $r < n$: $\infty$ many solutions, $(n-r)$ free parameters
-	\end{itemize}
-	$\Rightarrow r < m$:
-	\begin{itemize}[noitemsep, topsep=0pt]
-		\item $r = n$: only 1 solution
-		\item $r < n$: $\infty$ many solutions, $(n-r)$ free parameters
-	\end{itemize}
-	K 1.5 In a homogeneous LSE non-trivial solutions exist only if $r < n$.\\
-	\begin{tabular}{ll}
-		\textcolor{blue}{S 2.5} & $Ax = b$ has a solution $\Leftrightarrow$\\
-		& b is a linear combination of columnvectors of A\\
+	if this is the case:\\
+		\tabitem $r = n$: only 1 solution\\
+		\tabitem $r < n$: $\infty$ many solutions\\
+	$\Rightarrow r = m$:\\
+		\tabitem $r = n = m$: only 1 solution, \textcolor{red}{non-singular} LSE\\
+		\tabitem $r < n$: $\infty$ many solutions, $(n-r)$ free parameters\\
+	$\Rightarrow r < m$:\\
+		\tabitem $r = n$: only 1 solution\\
+		\tabitem $r < n$: $\infty$ many solutions, $(n-r)$ free parameters\\
+	\end{tabular}\\
+	K 1.5 In a homogeneous LSE non-trivial solutions exist only if $r < n$.
+	\smallskip\\
+	\textcolor{blue}{T 2.5}\\
+	\begin{tabular}{l}
+		$Ax = b$ has a solution $\Leftrightarrow$\\
+		b is a linear combination of columnvectors of A\\
 	\end{tabular}
 \end{mainbox}

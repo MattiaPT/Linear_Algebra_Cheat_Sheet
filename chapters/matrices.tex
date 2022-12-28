@@ -1,8 +1,9 @@
 \section{Matrices \& Vectors}
 \begin{mainbox}{General}
 $m$x$n$ Matrices have m rows and n columns.\\
-The element $(i,j)$ can be denoted as $a_{i,j}$ or $(A)_{i,j}$\\
-\textcolor{blue}{S 2.1}\\
+The element $(i,j)$ can be denoted as $a_{i,j}$ or $(A)_{i,j}$
+\smallskip\\
+\textcolor{blue}{T 2.1}\\
 \begin{tabular}{ll}
 	$(\alpha\beta)A = \alpha(\beta A)$ & $(A+B)+C = A+(B+C)$ \\
 	$(\alpha A)B = \alpha(AB)$ & $(AB)\cdot C = A\cdot (BC)$ \\
@@ -24,16 +25,184 @@ If $AB = BA$ we say «A and B commute»\par}
 	Def. & A matrix is \textcolor{blue}{skew-symmetric} when $A^T = -A$.\\
 	& (zeros on diagonal) \\
 \end{tabular}
-\textcolor{blue}{S 2.6}\\
+\smallskip\\
+\textcolor{blue}{T 2.6}\\
 \begin{tabular}{ll}
 	$(A^T)^T = A$ & $(\alpha A)^T = \alpha(A^T)$ \\
 	$(AB)^T = B^TA^T$ & $(A+B)^T = A^T + B^T$ \\
 \end{tabular}\\
-\textcolor{blue}{S 2.7}\\
+\smallskip\\
+\textcolor{blue}{T 2.7}\\
 \begin{tabular}{l}
 	If A, B symmetric: $AB = BA \Leftrightarrow AB$ symmetric\\
 	For any A: $A^TA = AA^T$ (symmetric)\\
 \end{tabular}
+\end{mainbox}
 
+\begin{mainbox}{Scalar Product and Norm}
+Def. \textcolor{red}{Eucl. scalar product} (SP): $\langle x,y\rangle :\equiv x^Hy$ (inner product)
+\smallskip\\
+\textcolor{blue}{T 2.9}\\
+\begin{tabular}{ll}
+	linearity in second factor: & $\langle x,y+z\rangle = \langle x,y\rangle + \langle x,z\rangle$\\
+	& $\langle x,\alpha y\rangle = \alpha \langle x,y\rangle$\\
+	symmetric / hermitian: & $\langle x,y\rangle = \compconj{\langle y,x \rangle}$\\
+	positive definite: & $\langle x,x\rangle \geq 0$; if $\;'='\;\Rightarrow\;x = 0$\\ 
+\end{tabular}\\
+\smallskip\\
+\textcolor{blue}{C 2.10}\\
+\begin{tabular}{ll}
+	bilinearity in $\mathbb{R}^n$: & $\langle w+x,y\rangle = \langle w,y\rangle + \langle x,y\rangle$\\
+	& $\langle \alpha x,y\rangle = \alpha \langle x,y\rangle$\\
+	sesquilinearity in $\mathbb{C}^n$: & $\langle w+x,y\rangle = \langle w,y\rangle + \langle x,y\rangle$\\
+	& $\langle \alpha x,y\rangle = \compconj{\alpha} \langle x,y\rangle$\\ 
+\end{tabular}\\
+\smallskip\\
+Def. \textcolor{red}{Eucl. norm / 2-norm}: $||x|| :\equiv \sqrt{\langle x,x \rangle}$
+\smallskip\\
+\textcolor{blue}{(Cauchy-)Schwarz inequality (CBS inequality)}\\
+\begin{tabular}{l}
+	$|\langle x,y\rangle| \leq ||x|| \cdot ||y||$\\
+	The equality holds iff y is a multiple of x or vice versa\\
+\end{tabular}\\
+\smallskip\\
+\textcolor{blue}{T 2.12}\\
+\begin{tabular}{ll}
+	\multicolumn{2}{l}{The following holds for the 2-norm:} \\
+	(N1) & positive definite: $||x|| \geq 0$, if$\;'='\;\Rightarrow\; x = 0$\\
+	(N2) & $||\alpha x|| = |\alpha |\;||x||$\\
+	(N3) & \textcolor{red}{triangle inequality}: $||x\pm y|| \leq ||x|| + ||y||$\\ 
+\end{tabular}\\
+\smallskip\\
+Def. angle $\varphi$ between x and y: $\varphi = arc\;cos\left(\frac{\langle x,y\rangle}{||x||\cdot ||y||}\right)$
+\smallskip\\
+Def. x and y are \textcolor{blue}{orthogonal}, if $\langle x,y\rangle = 0$; $x \perp y$
+\smallskip\\
+\textcolor{blue}{T 2.13}\\
+\begin{tabular}{ll}
+	\textcolor{blue}{Pythagoras} & $||x \pm y||^2 = ||x||^2 + ||y||^2$, if $x \perp y$\\
+\end{tabular}
+\smallskip\\
+Def. \textcolor{blue}{p-Norm}: $||x||_p :\equiv (|x_1|^p + ... + |x_n|^p)^{\frac{1}{p}}$\\
+\end{mainbox}
 
+\begin{mainbox}{Outer Product and Projection}
+Def. The \textcolor{blue}{outer product} is the matrix that is returned,\\
+when multiplying the vectors x and y: $x\cdot y^H$ (rank = 1)
+\smallskip\\
+\textcolor{blue}{T 2.15}\\
+\begin{tabular}{l}
+	The \textcolor{red}{orthogonal projection} $P_yx$ of $x$ on $y$ is given by:\\
+	$P_yx :\equiv \frac{1}{||y||^2}yy^Hx$
+\end{tabular}
+\smallskip\\
+Def. the \textcolor{blue}{projection matrix} $P_y = \frac{1}{||y||^2}\cdot yy^H$\\[-5pt]
+
+\quad $P_y^H = P_y$ (Hermitian), $P_y^2 = P_y$ (Idempotent)\\
+\end{mainbox}
+
+\begin{mainbox}{Linear Transformations}
+For all $x, \tilde{x} \in \mathbb{E}^n$ and $\gamma \in \mathbb{E}$:\\
+$A(\gamma x + \tilde{x}) = \gamma (Ax) + (A\tilde{x})$
+\smallskip\\
+Def. \textcolor{red}{image of A}: $\;imA\;:\equiv\;\{Ax\in \mathbb{E}^m; x\in \mathbb{E}^n\}$\\
+\end{mainbox}
+
+\begin{mainbox}{Inverse}
+\begin{tabular}{ll}
+	Def. & A nxn matrix A is \textcolor{blue}{invertible}, if there exists\\
+	& a matrix $A^{-1}$, such that $A\cdot A^{-1} = I_n = A^{-1}A$.\\
+\end{tabular}\\
+\smallskip\\
+\textcolor{blue}{T 2.17} 4 equivalent statements:\\
+\begin{tabular}{rl}
+	i) & A is invertible\\
+	ii) & $\exists X$ such that $AX = I_n$\\
+	iii) & X is definitive\\
+	iv) & A is non-singular, i.e. rank A = n\\
+\end{tabular}\\
+\smallskip\\
+\textcolor{blue}{T 2.18} With two non-singular nxn matrices $A$ and $B$:
+\begin{tabular}{rl}
+	i) & $A^{-1}$ is non-singular and $(A^{-1})^{-1} = A$\\
+	ii) & $AB$ is non-singular and $(AB)^{-1} = B^{-1}A^{-1}$\\
+	iii) & $A^H$ is non-singular and $(A^H)^{-1} = (A^{-1})^H$\\
+\end{tabular}\\
+\smallskip\\
+\textcolor{blue}{T 2.19}\\
+\begin{tabular}{l}
+	If $A$ is non-singular, $Ax = b$ has exactly one\\
+	solution for every b: $x = A^{-1}b$\\
+\end{tabular}\\
+\smallskip\\
+\textcolor{red}{Find inverse $O(n^3)$}: $[\;A\;|\;I\;]\longrightarrow[\;I\;|\;A^{-1}\;]$\\
+-> using elementary row operations\\
+\smallskip\\
+$A = \begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}$ and $detA \neq 0\;\Leftrightarrow A^{-1}=\frac{1}{ad-bc}\cdot \begin{bmatrix}
+d & -b \\
+-c & a \\
+\end{bmatrix}$
+\end{mainbox}
+
+\begin{mainbox}{Orthogonal and Unitary Matrices}
+\begin{tabular}{ll}
+	Def. & We call a matrix unitary or orthogonal, \\
+	& if $A^HA = I_n$, $A^TA = I_n$ respectively.\\
+\end{tabular}\\
+\smallskip\\
+\textcolor{blue}{T 2.20} Let $A$ and $B$ be unitary:\\
+\begin{tabular}{rl}
+	i) & $A$ is non-singular and $A^{-1} = A^H$\\
+	ii) & $AA^H = I_n$\\
+	iii) & $A^{-1}$ is unitary (/orthogonal)\\
+	iv) & $AB$ is unitary (/orthogonal)\\
+\end{tabular}\\
+\smallskip\\
+\textcolor{blue}{T 2.21}\\
+\begin{tabular}{l}
+	A linear transformation defined by an orthogonal\\
+	or unitary nxn matrix A is \textcolor{red}{length preserving} \\
+	(/isometric) and \textcolor{red}{angle preserving}:\\
+	$||Ax|| = ||x||$, $\langle Ax,Ay\rangle = \langle x,y\rangle$\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Examples of Important Matrices}
+\textcolor{blue}{Rotationmatrices (orthogonal)}\\
+$\begin{bmatrix}
+cos(\varphi) & sin(\varphi) \\
+-sin(\varphi) & cos(\varphi) \\
+\end{bmatrix}$ or $\begin{bmatrix}
+cos(\varphi) & 0 & sin(\varphi) & 0 \\
+0 & 1 & 0 & 0 \\
+-sin(\varphi) & 0 & cos(\varphi) & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}$
+\\\smallskip\\
+\textcolor{blue}{Permutationmatrices (orthogonal)}\\
+$\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}$ or
+$\begin{bmatrix}
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 \\
+\end{bmatrix}$
+\\\smallskip\\
+\textcolor{blue}{Blockmatrices}\\
+$A = \left(\begin{array}{@{}c|c@{}}
+  a_{11} & a_{12} \\
+\hline
+  a_{21} & a_{22}
+\end{array}\right)$, if invertible $A^{-1} = \left(\begin{array}{@{}c|c@{}}
+  a_{11}^{-1} & a_{12}^{-1} \\
+\hline
+  a_{21}^{-1} & a_{22}^{-1}
+\end{array}\right)$
 \end{mainbox}
