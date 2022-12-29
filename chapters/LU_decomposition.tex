@@ -4,16 +4,24 @@ The \textcolor{red}{LU-Decomposition} is a tool to\\
 solve SLE. It does this by factorizing a matrix, making\\
 it easy to solve the same matrix vor different RHS.\\
 \begin{tabular}{l|l}
-	1. Find $PA = LR$ & $\begin{bmatrix}
-	1 & 0 & 0 \\
-	0 & 1 & 0 \\
-	0 & 0 & 1 \\
-	\end{bmatrix} $\\
-	\makecell[l]{2. solve $Lc = Pb$\\\quad(forward substitution)} & \\
-	\makecell[l]{3. solve $Rx = c$\\\quad(backward substitution)} & \\
+	1. Find $PA = LR$ & $\left[\arraycolsep=3.8pt\begin{array}{ccc|ccc|ccc}
+	1 & 0 & 0 & 2 & 1 & 2 & 1 & 0 & 0\\
+	0 & 1 & 0 & 1 & 2 & 3 & 0 & 1 & 0\\
+	0 & 0 & 1 & 2 & 2 & 2 & 0 & 0 & 1\\
+	\end{array}\right] $\\
+	\makecell[l]{2. Solve $Lc = Pb$\\\quad(forward subst.)} & $\left[\arraycolsep=3.64pt\begin{array}{ccc|ccc|ccc}
+	1 & 0 & 0 & 2 & 1 & 2 & 1 & 0 & 0\\
+	0 & 1 & 0 & 0 & \frac{3}{2} & 2 & \textcolor{red}{\frac{1}{2}} & 1 & 0\\
+	0 & 0 & 1 & 0 & 1 & 0 & \textcolor{red}{1} & 0 & 1\\
+	\end{array}\right] $\\
+	\makecell[l]{3. Solve $Rx = c$\\\quad(backward subst.)} & $\left[\arraycolsep=3pt\begin{array}{ccc|ccc|ccc}
+	1 & 0 & 0 & 2 & 1 & 2 & 1 & 0 & 0\\
+	0 & 1 & 0 & 0 & \frac{3}{2} & 2 & \textcolor{red}{\frac{1}{2}} & 1 & 0\\
+	\undermat{P}{0 & 0 & 1} & \undermat{R}{0 & 0 & -\frac{4}{3}} & \undermat{L}{\textcolor{red}{1} & \textcolor{red}{\frac{2}{3}} & 1}\\
+	\end{array}\right] $\\
 	& \\
 	\makecell[l]{If rows are swapped\\ P gets permutated.} & \\
 	& \\
-	\makecell[l]{\textcolor{red}{partial pivoting} as a \textcolor{red}{pivot}\\\textcolor{red}{strategy} to minimize round-\\ing errors} & \\
+	\multicolumn{2}{l}{\makecell[l]{\textcolor{red}{partial pivoting} as a \textcolor{red}{pivot}\\\textcolor{red}{strategy} to minimize rounding errors}}\\
 \end{tabular}
 \end{mainbox}
