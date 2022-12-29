@@ -1,0 +1,113 @@
+\section{Vector Spaces}
+\begin{mainbox}{General}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rlll}
+	Def. & \multicolumn{3}{l}{A \textcolor{blue}{vector space V} over $\mathbb{E}$ is a non-empty set,}\\
+	& \multicolumn{3}{l}{on which addition and scalar multiplication}\\
+	& \multicolumn{3}{l}{are defined.}\\
+	\rule{0pt}{3ex} 
+	\textcolor{blue}{Axioms} & $(V1)$ & $x+y=y+x$ & $(\forall x,y \in V)$\\
+	& $(V2)$ & $(x+y)+z=x+(y+z)$ & $(\forall x,y,z \in V)$\\
+	& $(V3)$ & \multicolumn{2}{l}{$\exists o\in V: x + o = x$}\\
+	& & \multicolumn{2}{l}{$(\forall x \in V)$\quad\textcolor{red}{zero vector}}\\
+	& $(V4)$ & $\forall x\;\exists (-x): x+(-x) = o$ & $(\forall x \in V)$\\
+	& $(V5)$ & \multicolumn{2}{l}{$\alpha(x+y)=\alpha x+\alpha y$}\\
+	& & \multicolumn{2}{l}{$(\forall \alpha \in \mathbb{E},\; \forall x,y \in V)$}\\
+	& $(V6)$ & \multicolumn{2}{l}{$(\alpha+\beta)x=\alpha x+\beta x$}\\
+	& & \multicolumn{2}{l}{$(\forall \alpha, \beta \in \mathbb{E},\;\forall x \in V)$}\\
+	& $(V7)$ & \multicolumn{2}{l}{$(\alpha \beta)x = \alpha (\beta x)$}\\
+	& & \multicolumn{2}{l}{$(\forall \alpha, \beta \in \mathbb{E},\;\forall x \in V)$}\\
+	& $(V8)$ & $1x = x$ & $(\forall x \in V)$\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 4.1} & \multicolumn{3}{l}{$\forall \alpha \in \mathbb{E}, \forall x,y \in V$}\\
+	\multicolumn{1}{r}{i)} & \multicolumn{1}{l}{$0\cdot x = o$} & \multicolumn{1}{r}{ii)} & \multicolumn{1}{l}{$\alpha o = o$}\\
+	\multicolumn{1}{r}{iii)} & \multicolumn{3}{l}{$\alpha \cdot x = o\;\Rightarrow\;x=o\;or\;\alpha = 0$}\\
+	\multicolumn{1}{r}{iv)} & \multicolumn{3}{l}{$(-\alpha)\cdot x = \alpha \cdot (-x) = -(\alpha x)$}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 4.2} & \multicolumn{3}{l}{$\forall x,y \in V,\;\exists z \in V$}\\
+	& \multicolumn{3}{l}{$x + z = y$, where z is definite and $z = y + (-x)$}\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Fields}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rlll}
+	Def. & \multicolumn{3}{l}{A \textcolor{blue}{Field} is a non-empty set $\mathbb{K}$,}\\
+	& \multicolumn{3}{l}{on which addition and multiplication}\\
+	& \multicolumn{3}{l}{are defined.}\\
+	\rule{0pt}{3ex} 
+	\textcolor{blue}{Axioms} & $(K1)$ & $\alpha +\beta =\beta +\alpha$ & $(\forall \alpha, \beta \in \mathbb{K})$\\
+	& $(K2)$ & $(\alpha +\beta )+\gamma =\alpha +(\beta +\gamma )$ & $(\forall \alpha,\beta,\gamma \in \mathbb{K})$\\
+	& $(K3)$ & \multicolumn{2}{l}{$\exists o\in V: \alpha + o = \alpha$}\\
+	& & \multicolumn{2}{l}{$(\forall \alpha \in \mathbb{K})$\quad\textcolor{red}{zero element}}\\
+	& $(K4)$ & $\forall \alpha\;\exists (-\alpha): \alpha+(-\alpha) = o$ & $(\forall \alpha \in \mathbb{K})$\\
+	& $(K5)$ & $\alpha\cdot\beta=\beta\cdot\alpha$ & $(\forall \alpha, \beta \in \mathbb{K})$\\
+	& $(K6)$ & \multicolumn{2}{l}{$(\alpha\cdot\beta)\cdot\gamma = \alpha\cdot(\beta\cdot\gamma)$}\\
+	& & \multicolumn{2}{l}{$(\forall \alpha, \beta, \gamma \in \mathbb{K})$}\\
+	& $(K7)$ & \multicolumn{2}{l}{$\exists\;1 \in \mathbb{K}: \alpha \cdot 1 = \alpha$}\\
+	& & \multicolumn{2}{l}{$(\forall \alpha \in \mathbb{K})$\quad\textcolor{red}{identity element}}\\
+	& $(K8)$ & \multicolumn{2}{l}{$\forall \alpha \in \mathbb{K},\;\alpha \neq 0,\;\exists \alpha^{-1} \in \mathbb{K}:$}\\
+	& & \multicolumn{2}{l}{$\alpha \cdot (\alpha^{-1}) = 1$\quad\textcolor{red}{inverse}}\\
+	& $(K9)$ & \multicolumn{2}{l}{$\alpha\cdot(\beta + \gamma) = \alpha\cdot\beta + \alpha\cdot\gamma$}\\
+	& & \multicolumn{2}{l}{$(\forall \alpha, \beta, \gamma \in \mathbb{K})$}\\
+	& $(K10)$ & \multicolumn{2}{l}{$(\alpha + \beta)\cdot\gamma) = \alpha\cdot\gamma + \beta\cdot\gamma$}\\
+	& & \multicolumn{2}{l}{$(\forall \alpha, \beta, \gamma \in \mathbb{K})$}\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Subspaces}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	Def. & A \textcolor{blue}{subspace U} is a non-empty subset of\\
+	& a vector space V, which is closed under sums\\
+	& and scalar multiples.\\
+	\rule{0pt}{3ex} 
+	\textcolor{blue}{T 4.3} & A subspace is a vector space itself.\\
+	\rule{0pt}{3ex} 
+	\textcolor{blue}{T 4.4} & With $A\in\mathbb{R}^{mxn}$ and $L_0$ containing \\
+	& solutions of $Ax = o$, $L_0$ is a subspace of $\mathbb{R}^n$.\\
+	\rule{0pt}{3ex} 
+	Def. & The set of all linear combinations of $v_1, ..., v_n$\\
+	& is a subspace spanned by these vectors.\\
+	& \textcolor{red}{$span\{v_1, ..., v_n\}$} / linear hull of $v_1, ..., v_n$\\
+	Def. & The vectors $v_1, ..., v_n$ are a \textcolor{blue}{spanning set}\\
+	& of V, if $\forall w \in V\:\Rightarrow\;w\in span\{v_1, ..., v_n\}$.
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Linear Dependencies, Bases, Dimensions}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	Def. & Vectors $v_1, ..., v_n$ are \textcolor{blue}{linearly independent}, if no\\
+	& vector is a linear combination of the others.\\
+	& $\Sigma_{k=0}^{n}\;\alpha_k v_k = 0$, only if $\alpha_1 = ... = \alpha_k = 0$ \\
+	\rule{0pt}{3ex} 
+	Def. & A $span\{v_1, ..., v_n\} = V$ is a \textcolor{blue}{basis} of V,\\
+	& if $v_1, ..., v_n$ are linearly independent.\\ 
+	& $\Rightarrow$ standard basis consists of unit vectors\\
+	\rule{0pt}{3ex} 
+	Def. & The \textcolor{blue}{dimension} of V is denoted as,\\
+	& \textcolor{blue}{$dimV$} $=|spanV|$.\quad$dim\{0\} = 0$\\
+	\rule{0pt}{3ex} 
+	\textcolor{blue}{L 4.8} & Any set $\{v_1, ..., v_m\}\;\subset V$ with $|B_V| < m$ \\
+	& is linearly dependent.\\
+	\rule{0pt}{3ex} 
+	\textcolor{blue}{T 4.9} & Any set of linearly independent vectors of V\\
+	& can be extended to a basis of V.\\
+	& (as long as V has a finite spanning set)\\
+	\rule{0pt}{3ex} 
+	\textcolor{blue}{C 4.10} & The set of n linearly independent vectors is a\\
+	& basis of V in any finite vector space, if $dimV = n$.\\
+	\rule{0pt}{3ex}
+	Def. & The coefficients $\xi_k$ are \textcolor{blue}{coordinates} of x\\
+	& in basis B. $\xi = (\xi_1 ... \xi_n)^T$ is the \textcolor{blue}{coordinate vector}\\
+	& and $x = \Sigma_{i=1}^n\;\xi_ib_i$ is the representation of x\\
+	& in coordinates of B.\\
+	\rule{0pt}{3ex}
+	Def. & Two subspaces $U,\;U'\;\subset\;V$ are complementary,\\
+	& if every $v\in V$ has a specific representation \\
+	& $v=u+u'$, with $u\in U,\; u' \in U'$. In that case\\
+	& V is the \textcolor{blue}{direct sum} of $U$ and $U'$:\\
+	& $V = U \bigoplus U'$.\\
+\end{tabular}
+\end{mainbox}

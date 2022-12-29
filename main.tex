@@ -154,6 +154,9 @@
 	\end{tabular}}
 \newcommand{\tabitem}{~~\quad\llap{\textbullet}~~}
 \newcommand{\rvline}{\hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}}
+\newcommand\undermat[2]{%
+  \makebox[0pt][l]{$\smash{\underbrace{\phantom{%
+    \begin{matrix}#2\end{matrix}}}_{\text{$#1$}}}$}#2}
 
 
 
@@ -163,4 +166,5 @@
  \input{chapters/linear_systems_of_equations}
  \input{chapters/matrices}
  \input{chapters/LU_decomposition}
+ \input{chapters/vector_spaces}
 \end{document}
