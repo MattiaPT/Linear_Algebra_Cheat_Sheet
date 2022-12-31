@@ -11,6 +11,12 @@
 \usepackage{multirow}
 \usepackage{fourier}
 \usepackage{makecell}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows,positioning}
+\tikzset{
+  shift left/.style ={commutative diagrams/shift left={#1}},
+  shift right/.style={commutative diagrams/shift right={#1}}
+}
 
 
 %opening
@@ -167,4 +173,5 @@
  \input{chapters/matrices}
  \input{chapters/LU_decomposition}
  \input{chapters/vector_spaces}
+ \input{chapters/linear_maps}
 \end{document}

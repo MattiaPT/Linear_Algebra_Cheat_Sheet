@@ -1,0 +1,189 @@
+\section{Linear Maps}
+\begin{mainbox}{General}
+	\setlength{\tabcolsep}{2pt}
+	\begin{tabular}{rl}
+		Def. & A transformation $F: X \rightarrow Y,\; x\mapsto F(x)$ is \textcolor{blue}{linear},\\
+		& if the following holds:\\
+		& $F(x+\tilde{x}) = F(x) + F(\tilde{x})$\\
+		& $F(\gamma x) = \gamma F(x)$\\
+	\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Functions}
+	\setlength{\tabcolsep}{2pt}
+	\begin{tabular}{rll}
+		Def. & \textcolor{blue}{Injective}: & $\forall x, x' \in X: F(x) = F(x') \Rightarrow x = x'$ \\
+		& \textcolor{blue}{Surjective}: & $F(X) = Y$ \\
+		& \textcolor{blue}{Bijective}: & injective and surjective $\Rightarrow\;f^{-1}$ existiert \\
+	\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Transformation matrix}
+	\setlength{\tabcolsep}{2pt}
+	\begin{tabular}{rl}
+		\multicolumn{2}{l}{Let $F$ be a linear transformation $X \rightarrow Y$. $F(b_l) \in Y$ can}\\
+		\multicolumn{2}{l}{be written using a linear combination of the basis of Y:}\\
+		\multicolumn{2}{l}{$F(b_l) = \Sigma_{k=1}^m a_{kl}c_k$}\\
+		\rule{0pt}{3ex}
+		Def. & The mxn matrix $A = (a_{kl})$ is the \textcolor{blue}{matrix for F}\\
+		& \textcolor{blue}{relative to the given bases} in X and Y.\\
+		& \\
+		& \multicolumn{1}{l}{
+		\begin{tabular}{ll}		
+		\begin{tabular}{l}
+			$F(x) = y \Leftrightarrow A\xi = \eta$\\
+		\end{tabular} & \begin{tabular}{l}
+			\input{assets/map_transformation.tex}\\
+		\end{tabular}
+		\end{tabular}}\\
+		\rule{0pt}{3ex}
+		Def. & If $F$ is bijective, we call it an \textcolor{blue}{isomorphism},\\
+		& if $X = Y$, we call it an \textcolor{blue}{automorphism}.\\
+		\rule{0pt}{3ex}
+		\textcolor{blue}{L 5.1} & If $F$ is an isomorphism, there exists $F^{-1}$\\
+		& and $F^{-1}$ is also an isomorphism.\\
+	\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Kernel, Image and Rank}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}[t]{rll}
+	Def. & \multicolumn{2}{l}{The \textcolor{blue}{kernel} of F $ker\;F :\equiv \{x\in X | F(x) = o\}$}\\
+	& \multicolumn{2}{l}{is a subspace of X. \textcolor{red}{F injective $\Leftrightarrow ker\;F = \{o\}$ (T 5.6)}}\\
+	\rule{0pt}{3ex}
+	Def. & \multicolumn{2}{l}{The \textcolor{blue}{image} of F $im\;F :\equiv \{F(x) | x\in X\}$}\\
+	& \multicolumn{2}{l}{is a subspace of Y. \textcolor{red}{F surjective $\Leftrightarrow im\;F = Y$}}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 5.7} & \multicolumn{2}{l}{\textcolor{blue}{Rank-nullity theorem}:}\\
+	& \multicolumn{2}{l}{$dim\;X - dim(ker\;F) = dim(im\;F) = rankF$}\\
+	\rule{0pt}{3ex}
+	Def. & \multicolumn{2}{l}{The \textcolor{blue}{rank F} is defined as: $rankF = dim(im\;F)$.}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{K 5.8} & $\bullet F:\; X\rightarrow Y$ injective & $\Leftrightarrow rankF = dim\;X$\\
+	 & $\bullet F:\; X \rightarrow Y$ surjective & $\Leftrightarrow rankF = dim\;Y$\\
+	 & $\bullet F:\; X \rightarrow Y$ bijective & $\Leftrightarrow rankF = dim\;X = dim\;Y$\\
+	 & \;\;\textcolor{red}{Isomorphism} & \\
+	 & $\bullet F:\; X \rightarrow X$ bijective & $\Leftrightarrow rankF = dim\;X$\\
+	 & \;\;\textcolor{red}{Automorphism} & $\Leftrightarrow ker\;F = o$\\
+	 \rule{0pt}{3ex}
+	 Def. & \multicolumn{2}{l}{Two vector spaces X, Y are isomorphic, if}\\
+	 & \multicolumn{2}{l}{there exists an isomorphism $F:\;X\rightarrow Y$.}\\
+	 \rule{0pt}{3ex}
+	 \textcolor{blue}{T 5.9} & \multicolumn{2}{l}{Two finite vector spaces X, Y are isomorphic}\\
+	 & \multicolumn{2}{l}{$\Leftrightarrow dim\;X = dim\;Y$}\\
+	 \rule{0pt}{3ex}
+	 \begin{tabular}{l}	\textcolor{blue}{C 5.10} \\
+	 		\\
+	 		\\
+	 	\end{tabular} & \multicolumn{2}{l}{\begin{tabular}{rl}
+	 		i) & $rank(G\circ F) \leq min\{rankF, rankG\}$\\
+	 		ii) & $G$ injective $\Rightarrow rank(G\circ F) = rankF$\\
+	 		iii) & $G$ surjective $\Rightarrow rank(G\circ F) = rankG$\\
+	 	\end{tabular}}\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Matrices as Linear Mappings}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	Def. & The \textcolor{blue}{column space / range} of A is the subspace\\
+	& $R(A) = span\{a_1, ..., a_n\} = im\;A$\\
+	\rule{0pt}{3ex}
+	Def. & The \textcolor{blue}{null space} of A is the subspace\\
+	& $N(A) = L_0(Ax = o) = ker\;A$\\
+	& \#free\_parameters $= dim(N(A))$\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 5.12} & With $rankA = r$ and solution set $L_0$ of $Ax = o$:\\
+	& $dim\;L_0\equiv dim\;N(A)\equiv dim(ker\;A) = n - r$ \\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 5.13} & for $A^{mxn}$: $rankA\;=\;...$ \\
+	& \begin{tabular}{rl}
+		i) & \#pivotelements in reduced form of A\\
+		ii) & $dim(im\;A)$\\
+		iii) & $dim(column\;space)$\\
+		iv) & $dim(row\;space)$\\
+	\end{tabular}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{C 5.14} & $rankA^T = rankA^H = rankA$\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 5.16} & With $A\in \mathbb{E}^{mxn}$, $B\in \mathbb{E}^{pxm}$:\\
+	& \begin{tabular}{rl}
+		i) & $rank(BA) \leq min\{rankB, rankA\}$\\
+		ii) & $rankB = m (\leq p) \Rightarrow rank(BA) = rankA$\\
+		iii) & $rankA = m (\leq n) \Rightarrow rank(BA) = rankB$\\
+	\end{tabular}\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	\textcolor{blue}{T 5.18} & For square matrices the following statements\\
+	& are equivalent:\\
+	& \begin{tabular}{rlrl}
+		i) & A is invertible & ii) & A is non-singular \\
+		\rule{0pt}{2ex}
+		iii) & $rankA = n$ & iv) & columns are lin.\\
+		\rule{0pt}{2ex}
+		v) & rows are linearly & & independent\\
+		\rule{0pt}{2ex}		
+		& independent & vi) & $im\;A \equiv R(A) = \mathbb{E}^n$\\
+		\rule{0pt}{2ex}
+		vii) & $ker\;A \equiv N(A) = \{o\}$ & viii) & $A:\mathbb{E}^n\rightarrow\mathbb{E}^n$ is an\\
+		\rule{0pt}{2ex}
+		ix) & A is the transformation & & automorphism\\
+		\rule{0pt}{2ex}
+		& matrix for a coordinate & & \\
+		\rule{0pt}{2ex}
+		& transformation & & \\
+		\rule{0pt}{2ex}
+	\end{tabular}\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Affine Spaces and solutions to inhomogeneous LSE}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	Def. & Let $U$ be a subspace of $V$ and $u_0 \in V$:\\
+	& $u_0 + U :\equiv \{u_0 + u | u\in U\}$ is an \textcolor{blue}{affine (sub)space}.\\
+	\rule{0pt}{3ex}
+	Def. & Let $F:\;X\rightarrow Y$ be a linear mapping and $y_0 \in Y$:\\
+	& $H:\;X\rightarrow y_0+Y$, $x\mapsto y_0 + F(x)$ is an \textcolor{blue}{affine mapping}.\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 5.19} & Let $x_0$ be any solution of $Ax = b$ and\\
+	& let $L_0$ be the solution set for $Ax = o$: \\
+	& The solution set $L_b$ to $Ax = b$ is an affine subspace:\\
+	& $L_b = x_0 + L_0$\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{The Transformation matrix for coord. transformation}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{ll}
+	\multicolumn{2}{l}{Let $\;X$, $\;Y$ be vector spaces with $dim\;X = n$, $dim\;Y = m$:}\\
+	F:$\;X\rightarrow Y,\;x\mapsto y$ & a linear map,\\
+	A:$\;\mathbb{E}^n\rightarrow \mathbb{E}^m,\;\xi\mapsto \eta$ & a (mapping) matrix,\\
+	B:$\;\mathbb{E}^n\rightarrow \mathbb{E}^m,\;\xi'\mapsto \eta'$ & a (mapping) matrix,\\
+	T:$\;\mathbb{E}^n\rightarrow \mathbb{E}^n,\;\xi'\mapsto \xi$ & a transformation matrix in $\mathbb{E}^n$,\\
+	S:$\;\mathbb{E}^m\rightarrow \mathbb{E}^m,\;\eta'\mapsto \eta$ & a transformation matrix in $\mathbb{E}^m$,\\
+	\multicolumn{2}{l}{
+	\begin{tabular}{ll}
+		\begin{tabular}{l} 
+			\input{assets/map_transformation_2.tex}
+		\end{tabular} & \begin{tabular}{l}
+			$\text{A} = \text{S}\cdot\text{B}\cdot\text{T}^{-1}$\\
+			$\text{B} = \text{S}^{-1}\cdot\text{A}\cdot\text{T}$\\
+			\\
+			If $F:\;X\rightarrow X$:\\
+			$\text{A} = \text{T}\cdot\text{B}\cdot\text{T}^{-1}$\\
+			$\text{B} = \text{T}^{-1}\cdot\text{A}\cdot\text{T}$\\
+		\end{tabular}\\
+	\end{tabular}}\\
+\end{tabular}
+\begin{tabular}{rl}
+	Def. & Two nxn matrices A and B are \textcolor{blue}{similar},\\
+	& if there exists a non-singular matrix T, such that\\
+	& either $\text{B} = \text{T}^{-1}\cdot\text{A}\cdot\text{T}$ or $\text{A} = \text{T}\cdot\text{B}\cdot\text{T}^{-1}$.\\
+	& \\
+\end{tabular}
+\end{mainbox}

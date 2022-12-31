@@ -1,0 +1,28 @@
+\tikzstyle{line} = [draw, -latex']
+\begin{tikzpicture}[
+	node distance=1cm and 2cm,
+  	>=latex',
+  	auto,
+	thick
+  ]
+	\node (X) {$x\in X$};
+  	\node[right = of X] (Y) {$y\in Y$};
+  	\node[below = of Y] (Em) {$\eta\in\mathbb{E}^m$};
+  	\node[below = of X] (En) {$\xi\in\mathbb{E}^n$};
+  	\node[below = of En] (En2) {$\xi'\in\mathbb{E}^n$};
+  	\node[below = of Em] (Em2) {$\eta'\in\mathbb{E}^m$};
+
+	\path[->]
+	(X) edge node {$F$} (Y)
+	(En) edge node {A} (Em)
+	(En2) edge node {B} (Em2);
+	\path[->, shift left=.75ex]
+    (Y) edge node {$k_y$} (Em)
+    (Em) edge node {$k_y^{-1}$} (Y)
+    (X) edge node {$k_x$} (En)
+    (En) edge node {$k_x^{-1}$} (X)
+    (En) edge node {$\text{T}^{-1}$} (En2)
+    (En2) edge node {T} (En)
+    (Em) edge node {$\text{S}^{-1}$} (Em2)
+    (Em2) edge node {S} (Em);
+\end{tikzpicture}
