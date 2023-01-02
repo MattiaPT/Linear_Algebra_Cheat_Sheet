@@ -1,0 +1,19 @@
+\section{Least Squares Method}
+\begin{mainbox}{General}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	\multicolumn{2}{l}{Let $\text{Ax} = \text{y}$ be an \textcolor{blue}{overdetermined linear system} (more}\\
+	\multicolumn{2}{l}{equations than unknowns). As an exact solution is not}\\
+	\multicolumn{2}{l}{guaranteed we try to minimize the length of the}\\
+	\multicolumn{2}{l}{\textcolor{blue}{residual vector} (orthogonal to $^{}R(\text{A})$): $\text{r} :\equiv \text{y} - \text{Ax}$}\\
+	\\
+	\multicolumn{2}{l}{Therefore, to find the \textcolor{blue}{least squares solution} we}\\
+	\multicolumn{2}{l}{solve: $x^* = \text{arg min}_{x\in\mathbb{E}^n}||\text{Ax}-\text{b}||_2^2$}\\
+	\rule{0pt}{3ex}
+	Def. & The \textcolor{blue}{normal equations}, $\text{A}^\text{H}\text{Ax} = \text{A}^\text{H}\text{y}$\\
+	& can be used to solve the given LSE.\\
+	Lemma: & $\text{A}^\text{H}\text{A}$ non-singular $\Leftrightarrow rankA = n$\\
+	\rule{0pt}{3ex}
+	Def. & \textcolor{blue}{Moore-Penrose Pseudo-Inverse}: $\text{A}^+ :\equiv (\text{A}^\text{H}\text{A})^{-1}\text{A}^\text{H}$\\
+\end{tabular}
+\end{mainbox}

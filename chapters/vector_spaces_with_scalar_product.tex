@@ -1,0 +1,137 @@
+\section{Vector Spaces with Scalar Product}
+\begin{mainbox}{General}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rll}
+	Def. & \multicolumn{2}{l}{A \textcolor{blue}{norm} in a vector space is a function}\\
+	& \multicolumn{2}{l}{$||\cdot ||:\;V\rightarrow\mathbb{R}$, $x\mapsto ||x||$, which is:}\\
+	& (N1) \textcolor{blue}{positive definite}: & $||x|| \ge 0$, $||x|| = 0\Leftrightarrow x = 0$\\
+	& (N2) \textcolor{blue}{homogeneous}: & $||\alpha x|| = |\alpha |\;||x||$\\
+	& (N3) \textcolor{blue}{triangle inequality}: & $||x+y||\leq ||x||+||y||$\\
+	& \multicolumn{2}{l}{A vector space with norm is a \textcolor{blue}{normed vector space}.}\\
+	\rule{0pt}{3ex}
+	Def. & \multicolumn{2}{l}{A \textcolor{blue}{inner product} in a vector space is a function}\\
+	& \multicolumn{2}{l}{$\langle \cdot , \cdot\rangle : V\times V\rightarrow \mathbb{E}$, $x, y \mapsto \langle x,y\rangle$, which is:}\\
+	& (S1) \textcolor{blue}{linearity (2nd factor)}: & $\langle x, y + z\rangle = \langle x, y \rangle + \langle x, z \rangle$\\
+	& & $\langle x, \alpha y \rangle = \alpha \langle x, y \rangle$\\
+	& (S2) \textcolor{blue}{hermitian (sym. in $\mathbb{R}$)}: & $\langle x,y\rangle = \compconj{\langle y,x\rangle}$\\
+	& (S3) \textcolor{blue}{positive definite}: & $\langle x,x\rangle \geq 0$ \\
+	& & $\langle x, x\rangle = 0\Rightarrow x = o$\\
+	\rule{0pt}{3ex}
+	Def. & \multicolumn{2}{l}{The \textcolor{blue}{induced norm / length} of a vector is}\\
+	& \multicolumn{2}{l}{defined as: $||\cdot ||:\;V\rightarrow\mathbb{R}, ||x||\mapsto \sqrt{\langle x, x\rangle}$}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 6.1} & \multicolumn{2}{l}{\textcolor{blue}{Cauchy-Schwarz inequality}: $|\langle x,y\rangle|\leq ||x||\;||y||$}\\
+	\rule{0pt}{3ex}
+	Def. & \multicolumn{2}{l}{The \textcolor{blue}{angle} $\varphi = \angle(x, y)$, $0\leq\varphi\leq\pi$, is defined as:}\\
+	& \multicolumn{2}{l}{$\varphi :\equiv arc\;cos\left(\frac{\langle x,y\rangle}{||x||\;||y||}\right)$ or $\varphi :\equiv arc\;cos\left(\frac{\text{Re}\langle x,y\rangle}{||x||\;||y||}\right)$ }\\
+	\rule{0pt}{3ex}
+	Def. & \multicolumn{2}{l}{Two vectors are \textcolor{blue}{orthogonal}, if $\langle x,y\rangle = 0$, $x \perp y$.}\\
+	& \multicolumn{2}{l}{Two subsets are orthogonal, if:}\\
+	& \multicolumn{2}{l}{$\forall x\in M,\;\forall y\in N\quad\langle x,y\rangle = 0$, $M \perp N$}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 6.2} & \multicolumn{2}{l}{\textcolor{blue}{Pythagoras}: $x\perp y \Rightarrow ||x\pm y||^2 = ||x||^2 + ||y||^2$}\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Orthonormal Bases}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	Def. & A basis is \textcolor{blue}{orthogonal}, if the basis vectors are\\
+	& pairwise orthogonal: $\langle b_k,b_l\rangle = 0$, for $k \neq l$.\\
+	& We call the basis \textcolor{blue}{orthonormal}, if all basis vectors\\
+	& are of length 1: $\langle b_k, b_k\rangle = 1$.\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 6.4} & With an orthonormal basis $\{b_1, ..., b_n\}$ and $x\in V$:\\
+	& $x = \displaystyle\sum_{k=1}^n\langle b_k, x\rangle b_k\quad\Rightarrow\quad\xi_k = \langle b_k, x\rangle$\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 6.5} & \textcolor{blue}{Parseval's Identity}: with $\xi_k :\equiv \langle b_k,x\rangle_V$, $\eta_k :\equiv \langle b_k, y\rangle_V$\\
+	& $\langle x, y\rangle_V = \displaystyle\sum_{k=1}^n\compconj{\xi_k}\eta_k = \xi^H\eta = \langle\xi, \eta\rangle_{\mathbb{E}^n}$\\
+	& Therefore, the inner product of two vectors in V\\
+	& is equal to the scalar product of the respective\\
+	& coordinate vectors in $\mathbb{E}^n$:\\
+	& $||x||_V = ||\xi||_{\mathbb{E}^n}\quad\angle(x,y)_V = \angle(\xi,\eta)_{\mathbb{E}^n}\quad x\perp y \Leftrightarrow \xi\perp\eta$\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Gram-Schmidt Process}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	& $b_1 :\equiv \frac{a_1}{||a_1||_V}$ \\
+	& $\tilde{b_k} :\equiv a_k - \displaystyle \sum_{j=1}^{k-1}\langle b_j, a_k\rangle_V b_j$\\
+	& $b_k :\equiv \frac{\tilde{b_k}}{||\tilde{b_k}||_V}$\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 6.6} & After k steps $\{b_1, ..., b_k\}$ are pairwise orthonormal.\\
+	& If $\{a_1, ..., a_n\}$ is a basis of V, so is $\{b_1, ..., b_k\}$.\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Orthogonal Complements}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	Def. & \textcolor{blue}{$\text{U}^\perp$} is the orthogonal complement of\\
+	& the subspace U:\qquad$\text{U}^\perp \bigoplus \text{U} = \text{V}$\\
+	\textcolor{blue}{T 6.9} & For a complex mxn matrix with rank r:\\
+	& \begin{tabular}{ll}
+		$\bullet ^{}N(\text{A}) = (R(\text{A}^\text{H}))^\perp \subset\mathbb{E}^n$ & $\bullet ^{}N(\text{A}^\text{H}) = (R(\text{A}))^\perp) \subset\mathbb{E}^n$\\
+		$\bullet ^{}N(\text{A})\bigoplus R(\text{A}^\text{H}) = \mathbb{E}^n$ & $\bullet ^{}N(\text{A}^\text{H})\bigoplus R(\text{A}) = \mathbb{E}^m$\\
+		$\bullet ^{}dim\;R(\text{A}) = r$ & $\bullet ^{}dim\;N(\text{A}) = n - r$\\
+		$\bullet ^{}dim\;R(\text{A}^\text{H}) = r$ & $\bullet ^{}dim\;N(\text{A}^\text{H}) = m - r$\\
+	\end{tabular}\\
+	& We call these subspaces \textcolor{blue}{fundamental subspaces} of A.\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Orthogonal and Unitary Change Of Basis}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	& To get from B to B', where both are orthonormal\\
+	& bases, we can write $b'_k = \displaystyle \sum_{i=1}^n \tau_{ik}b_i$ and get\\
+	& the transformation matrix T, with $\text{T}^{-1} = \text{T}^\text{H}$.\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 6.11} & Therefore: $\xi = \text{T}\xi'$, $\xi' = \text{T}^\text{H}\xi$\\
+	\rule{0pt}{3ex}
+	& Additionally, $\text{B} = \text{B}'\text{T}$ and $\text{B}' = \text{B}\text{T}^\text{H}$, where all\\
+	& matrices are unitary/orthogonal.\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 6.10} & The transformation matrix for a change of basis\\
+	& between orthonormal bases is unitary/orthogonal.\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{C 6.12} & $\langle x,z\rangle_V = \xi^\text{H}\eta = (\xi')^\text{H}\eta ' = \langle \xi',\eta' \rangle$\\
+	& $\Rightarrow$ T is length and angle preserving\\
+	\multicolumn{2}{r}{\begin{tabular}{ll}
+		\begin{tabular}{l} 
+			\input{assets/map_transformation_3.tex}
+		\end{tabular} & {\small \begin{tabular}{ll}
+			& $\text{A} = \text{S}\cdot\text{B}\cdot\text{T}^\text{H}$\\
+			& $\text{B} = \text{S}^\text{H}\cdot\text{A}\cdot\text{T}$\\
+			\rule{0pt}{3ex}
+			& If $Y=X, k_y = k_x$\\
+			& and $ \text{S} = \text{T}$:\\
+			& $\text{A} = \text{T}\cdot\text{B}\cdot\text{T}^\text{H}$\\
+			& $\text{B} = \text{T}^\text{H}\cdot\text{A}\cdot\text{T}$\\
+			& $\Rightarrow$ A, B are\\
+			& Hermitian\\
+		\end{tabular}}\\
+	\end{tabular}}
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Orthogonal and Unitary Transformations}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rll}
+	Def. & \multicolumn{2}{l}{A linear transformation $F:X\rightarrow Y$ is \textcolor{blue}{unitary}/}\\
+	& \multicolumn{2}{l}{\textcolor{blue}{symmetric}, if: $\langle F(x), F(y)\rangle_Y = \langle x,y\rangle_X$}\\
+	\textcolor{blue}{T 6.13} & i) & F is length preserving: $||F(x)||_Y=||x||_X$\\
+	& ii) & F is angle preserving: $x\perp y \Leftrightarrow F(x) \perp F(y)$\\
+	& iii) & $ker\;F = {o}$, F is injective\\
+	\rule{0pt}{3ex}
+	& \multicolumn{2}{l}{If additionally $dim\;X = dim\;Y < \infty$:}\\
+	\rule{0pt}{3ex}
+	& iv) & F is an isomorphism\\
+	& v) & $\{b_1, ..., b_n\}$ is an orthonormal basis for X\\
+	& & $\Leftrightarrow \{F(b_1), ..., F(b_n)\}$ is an orthonormal basis for Y\\
+	& vi) & $\text{F}^{-1}$ is unitary/orthogonal\\
+	& vii) & The transformation matrix A\\
+	& & is unitary/orthogonal.\\
+\end{tabular}
+\end{mainbox}
