@@ -1,0 +1,31 @@
+\section{QR Factorization \& Decomposition}
+\begin{mainbox}{General}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	$\text{A} = \text{QR}$ & Q: orthogonal matrix; R: upper triangular matrix\\
+	\\
+	\multicolumn{2}{l}{This decomposition is definite, if $m \geq n$ and $rankA = n$.}\\
+\end{tabular}
+\end{mainbox}
+
+\begin{howtobox}{Calculate QR Factorization}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{cl}
+	\RN{1}: & Gram-Schmidt process with columns of A $\Rightarrow$ Q\\
+	\RN{2}: & Solve $\text{R} = \text{Q}^\text{T}\text{A}$\\
+	& Alternatively:\\
+	& $\quad\bullet\;r_{11} :\equiv ||a_1||\quad\bullet\;r_{jk} :\equiv \langle q_j, a_k\rangle\quad\bullet\;r_{kk} :\equiv ||\tilde{q}_k||$\\
+\end{tabular}
+\end{howtobox}
+
+\begin{howtobox}{Least-Squares with QR Factorization}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{lrcl}
+	Normal equations: & $\text{A}^\text{T}\text{A}x$ & $=$ & $\text{A}^\text{T}b$\\
+	& $(\text{QR})^\text{T}(\text{QR})x$ & $=$ & $(\text{QR})^\text{T}b$\\
+	& $\text{R}^\text{T}\text{Q}^\text{T}\text{QR}x$ & $=$ & $\text{R}^\text{T}\text{Q}^\text{T}b$\\
+	& $\text{R}^\text{T}\text{R}x$ & $=$ & $\text{R}^\text{T}\text{Q}^\text{T}b$\\
+	& $\text{R}x$ & $=$ & $\text{Q}^\text{T}b$\\
+	& \multicolumn{3}{l}{$^\text{T}$ can be replaced with $^\text{H}$}\\
+\end{tabular}
+\end{howtobox}

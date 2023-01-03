@@ -1,0 +1,49 @@
+\section{Determinant}
+\begin{mainbox}{General}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rrl}
+	\textcolor{blue}{T 8.1} & \multicolumn{2}{l}{There are $n!$ permutations in $S_n$.}\\
+	\rule{0pt}{3ex}	
+	Def. & \multicolumn{2}{l}{The \textcolor{blue}{sign} of a permutation is defined as follows:}\\
+	& \multicolumn{2}{l}{$\text{sign }p = \begin{cases}
+        +1\text{, if \#permutations even}\\
+        -1\text{, if \#permutations odd}\\
+    \end{cases}$}\\
+    \rule{0pt}{3ex}
+    Def. & \multicolumn{2}{l}{The \textcolor{blue}{determinant} of an nxn matrix A is:}\\
+    & \multicolumn{2}{l}{$det(\text{A}) = \displaystyle\sum_{p\in S_n}\text{sign }p\cdot a_{1,p(1)}a_{2,p(2)} \ldots a_{n,p(n)}$}\\
+    \rule{0pt}{3ex}
+    \textcolor{blue}{T 8.3} & \multicolumn{2}{l}{Properties of $\text{det}:\;\mathbb{E}^{nxn}\rightarrow\mathbb{E}$, $\text{A}\mapsto \text{det(A)}$:}\\
+    & i) & det(+) is linear in every row\\
+    & ii) & when swapping two rows, det(A) switches sign\\
+    & iii) & $\text{det}(I) = 1$\\
+    \textcolor{blue}{T 8.4} & iv) & if A has a \textcolor{blue}{row of zeros}, det(A)$= 0$\\
+    & v) & $\text{det}(\gamma \text{A}) = \gamma ^n \text{det(A)}$\\
+    & vi) & if A has \textcolor{blue}{two identical rows}, det(A)$= 0$\\
+    & vii) & if we add multiples of two rows to each other,\\
+    & & det(A) doesn't change\\
+    & viii) & if A is triangular or diagonal, det(A)$=\displaystyle\prod_{i=1}^n a_{ii}$\\
+	\rule{0pt}{3ex}
+	& \multicolumn{2}{l}{det(A) $\Leftrightarrow$ A is singular}\\
+	& \multicolumn{2}{l}{det(A) $\Leftrightarrow$ A is non-singular}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 8.5} & \multicolumn{2}{l}{After applying the gauss algorithm to A:}\\
+	\multicolumn{3}{c}{det(A)$=(-1)^v\displaystyle\prod_{k=1}^n r_{kk}$}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 8.7} & \multicolumn{2}{l}{\textcolor{red}{Multiplicativity}:\quad det(AB) $=$ det(A) $\cdot$ det(B)}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{C 8.8} & \multicolumn{2}{l}{A non-singular $\Rightarrow$ det$(\text{A}^{-1})\;=\;(\text{det(A)})^{-1}$}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 8.9} & \multicolumn{2}{l}{$\text{det}(\text{A})^\text{T} = \text{det(A)}$\quad and\quad$\text{det}(\text{A}^\text{H}) = \compconj{\text{det(A)}}$}\\
+\end{tabular}
+\end{mainbox}
+
+\begin{bspbox}{Determinant for block matrices}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	\textcolor{blue}{C 8.14} & $\begin{vmatrix}
+		\text{A} & \text{B} \\
+		\text{O} & \text{D} \\
+	\end{vmatrix} = \text{det(A)}\cdot\text{det(D)}$\\
+\end{tabular}
+\end{bspbox}
