@@ -1,0 +1,35 @@
+\section{Singular Value Decomposition}
+\begin{mainbox}{General}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	\multicolumn{2}{l}{\tabitem exists for every Matrix}\\
+	\multicolumn{2}{l}{\tabitem $\text{A}^\text{H}\text{A}$ is always hermitian and positive semi-definite}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 11.1} & For a complex matrix $A^{mxn}$ of rank r, there exist\\
+	& unitary matrices U and V, and a mxn matrix $\Sigma$:\\
+	& $\Sigma = \begin{pmatrix}
+		\Sigma_r & O\\
+		O & O\\
+	\end{pmatrix}$, with $\Sigma_r :\equiv \text{diag }\{\sigma_1, \ldots, \sigma_r\}$\\
+	& where the \textcolor{blue}{singular values} $\sigma_i$ are positive and\\
+	& ordered, such that $\text{A}=\text{U}\Sigma\text{V}^\text{H}=\displaystyle\sum_{k=1}^ru_k\sigma_kv_k^\text{H}$\\
+	& \textcolor{red}{$\text{AA}^\text{H} = \text{U}\Sigma_m^2\text{U}^\text{H}$,\qquad$\text{A}^\text{H}\text{A}=\text{V}\Sigma_n^2\text{V}^\text{H}$}\\
+	\\
+	& \begin{tabular}{ll} 
+		$\{u_1, \ldots, u_r\}$ & is a basis of im A$\equiv R(\text{A})$\\
+		$\{u_{r+1}, \ldots, u_m\}$ & is a basis of ker A$^\text{H}\equiv N(\text{A}^\text{H})$\\
+	\end{tabular}\\
+	& $\Rightarrow$ $\{u_1, \ldots, u_m\}$ are the \textcolor{blue}{left singular vectors}\\
+	\\
+	& \begin{tabular}{ll}
+		$\{v_1, \ldots, v_r\}$ & is a basis of $im\;\text{A}^\text{H}\equiv R(\text{A}^\text{H})$\\
+		$\{v_{r+1}, \ldots, v_n\}$ & is a basis of $ker\;\text{A}\equiv N(\text{A})$\\
+	\end{tabular}\\
+	& $\Rightarrow$ $\{v_1, \ldots, v_n\}$ are the \textcolor{blue}{right singular vectors}\\
+\end{tabular}
+\end{mainbox}
+
+\begin{howtobox}{Least Squares using SVD}
+$||\text{A}x-b||_2^2 = ||\Sigma \underbrace{\text{V}^\text{H}x}_y - \underbrace{\text{U}^\text{H}b}_c||_2^2 = ||\Sigma y - c||_2^2$\\
+$x^* = \text{V}\Sigma^+\text{U}^\text{H}b\quad\Rightarrow\infty$ solutions, here smallest 2-norm\\
+\end{howtobox}

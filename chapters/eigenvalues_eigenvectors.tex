@@ -23,5 +23,56 @@
 	& just the zero vector (singular). $E_\lambda = ker\;(\text{A}-\lambda I)$\\
 	\rule{0pt}{3ex}
 	Def. & The \textcolor{blue}{geometric multiplicity} of $\lambda$ is $dim\;E_\lambda$.\\
+	\rule{0pt}{3ex}
+	Def. & The \textcolor{blue}{characteristic polynomial} of A$\in\mathbb{E}^{nxn}$\\
+	& is defined as $x_A(\lambda) :\equiv \text{det}(\text{A}-\lambda I)$. We call $x_A(\lambda) = 0$\\
+	& the \textcolor{blue}{characteristic equation}.\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{L 9.4} & $x_A(\lambda) = (-\lambda)^n + Tr(\text{A})(-\lambda)^{n-1} + \ldots + \text{det(A)}$\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{L 9.5} & $\lambda\in\mathbb{E}$ is an eigenvalue of $A\in\mathbb{E}^{nxn}$\\
+	& $\Leftrightarrow$ $\lambda$ is a root of $x_A$\\
+	& $\Leftrightarrow$ $\lambda$ is a solution to the characteristic equation\\
+	\rule{0pt}{3ex}
+	Def. & The \textcolor{blue}{algebraic multiplicity} of an eigenvalue $\lambda$ is the\\
+	& multiplicity of $\lambda$ as a root for the characteristic\\
+	& equation.\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{L 9.6} & A singular $\Leftrightarrow$ $0\in\sigma(\text{A})$\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 9.7} & Similar matrices have the same characteristic equa-\\
+	& tion, determinant, trace and the same eigenvalues.\\
+	\rule{0pt}{3ex}
+	Def. & A basis made of eigenvectors is a \textcolor{blue}{eigen basis} of F:\\
+	& $x = \displaystyle\sum_{k=1}^n \xi_kv_k\quad\mapsto\quad F(x) = \displaystyle\sum_{k=1}^n \lambda_k\xi_kv_k$\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 9.9} & There is a similar diagonal matrix $\Lambda$ to $\text{A}\in\mathbb{E}^{nxn}$\\
+	& $\Leftrightarrow$ A has an eigen basis $\qquad\textcolor{red}{\text{A}\text{V} = \text{V}\Lambda}$\\
+\end{tabular}
+\end{mainbox}
+
+\begin{mainbox}{Spectral/Eigenvalue Decomposition}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rl}
+	Def. & We call a matrix A to which a spectral decomposition\\
+	& A$=\text{V}\Lambda\text{V}^{-1}$ exists \textcolor{blue}{diagonalizable}.\\
+\end{tabular}
+\end{mainbox}
+\begin{mainbox}{}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{rrl}
+	\textcolor{blue}{T 9.13} & \multicolumn{2}{l}{geom. mult. $\leq$ alg. mult.}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 9.14} & \multicolumn{2}{l}{A matrix is diagonalizable, if for every}\\
+	& \multicolumn{2}{l}{eigenvalue holds: geom. mult. $=$ alg. mult.}\\
+	\rule{0pt}{3ex}
+	\textcolor{blue}{T 9.15} & \multicolumn{2}{l}{\textcolor{blue}{Spectral Theorem}: Let A$\in\mathbb{C}^{nxn}$ be hermitian:}\\
+	& i) & all eigenvalues are real\\
+	& ii) & the eigenvectors are pairwise orthogonal\\
+	& iii) & there is an orthonormal basis of $\mathbb{C}^n$\\
+	& & consisting of eigenvectors of A\\
+	& iv) & for this unitary matrix U holds:\\
+	& & $\text{U}^\text{H}\text{AU} = \Lambda :\equiv \text{diag}(\lambda_1, ..., \lambda_n)$\\
+	& \multicolumn{2}{l}{(also holds for real-symmetric A$\in\mathbb{R}^{nxn}$)}\\
 \end{tabular}
 \end{mainbox}
